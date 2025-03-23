@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "413af96e-6acd-4a70-abc3-8b5ee030334e",
+		"name": "LOGIN and AddCustomer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42452625"
+	},
+	"item": [
+		{
+			"name": "LoginWithValidCreditionals",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify the response body format\", function () {\r",
+							"    pm.response.to.have.jsonBody();\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{ValidPassword}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{ValidUserName}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/api/GetUserSetting?userId=3038",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"api",
+						"GetUserSetting"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "3038"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "LoginWithValidCreditionals",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "/api/GetUserSetting?userId=3038",
+							"path": [
+								"api",
+								"GetUserSetting"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "3038"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Mar 2025 08:36:22 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1249"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Status\": 200,\n    \"Message\": \"Success\",\n    \"data\": {\n        \"UserId\": 3038,\n        \"Designation\": \"\",\n        \"CheckInGeofencingId\": 0,\n        \"CheckoutGeofencingId\": 0,\n        \"MonthlyLeavesAllowed\": 0,\n        \"IsAdmin\": true,\n        \"IsAdminNotify\": false,\n        \"IsCheckInWithGeoFencing\": false,\n        \"IsCheckOutWithGeoFencing\": false,\n        \"IsEntireDayTracking\": true,\n        \"IsAdminInvite\": true,\n        \"WeeklyOff\": \"Sunday\",\n        \"AlternateDayOff\": \"Saturday\",\n        \"TotalAlternateDay\": \"\",\n        \"CheckInLatitude\": 0,\n        \"CheckInLongitude\": 0,\n        \"CheckOutLatitude\": 0,\n        \"CheckOutLongitude\": 0,\n        \"CheckInTime\": \"\",\n        \"CheckOutTime\": \"\",\n        \"IsJoin\": true,\n        \"IsSuperAdmin\": true,\n        \"CheckInRange\": 0,\n        \"GeoFencingCheckInName\": \"NA\",\n        \"GeoFencingCheckInLatitude\": 0,\n        \"GeoFencingCheckInLongitude\": 0,\n        \"CheckOutRange\": 0,\n        \"GeoFencingCheckOutName\": \"NA\",\n        \"GeoFencingCheckOutLatitude\": 0,\n        \"GeoFencingCheckOutLongitude\": 0,\n        \"RemindPunchInTime\": \"\",\n        \"IsNotifyManagerPunchInEmail\": false,\n        \"IsNotifyManagerPunchOutEmail\": false,\n        \"IsNotifyManagerPunchInMobile\": false,\n        \"IsNotifyManagerPunchOutMobile\": false,\n        \"IsNotifyUser\": true,\n        \"IsWebPunchIn\": true,\n        \"IsWebPunchOut\": true,\n        \"IsMobilePunchIn\": true,\n        \"IsMobilePunchOut\": true,\n        \"GeoFenceData\": [],\n        \"IsPunchInReport\": false,\n        \"IsWorkstation\": false,\n        \"WorkingHours\": 9,\n        \"HalfDayHours\": 6,\n        \"IsWorkingHoursEditable\": false,\n        \"IsOutsideGeofenceAllowed\": false\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "LoginWithInvalidCreditionals",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{InvalidPassword}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{InvalidUserName}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/api/GetUserSetting?userId=3038",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"api",
+						"GetUserSetting"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "3038"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddCustomer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{ValidPassword}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{ValidUserName}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RowNumber\": 2,\r\n\"Id\": 2846,\r\n\"RefNo\": \"\",\r\n\"LeadName\": \"SURAJ YADAV\",\r\n\"PersonName\": \"SURAJ\",\r\n\"PersonDesignation\": \"\",\r\n\"Address\": \"\",\r\n\"StatusId\": 3,\r\n\"Status\": \"Cold\",\r\n\"CityId\": 0,\r\n\"CityName\": \"-\",\r\n\"StateId\": 0,\r\n\"StateName\": \"-\",\r\n\"CountryId\": 0,\r\n\"CountryName\": \"-\",\r\n\"MobileNo\": \"\",\r\n\"ContactNo\": \"\",\r\n\"Email\": \"\",\r\n\"LocalityId\": 0,\r\n\"LocalityName\": \"-\",\r\n\"ModifiedDate\": \"03-23-2025 02:55:06 PM\",\r\n\"CreatedDate\": \"03-23-2025 02:55:06 PM\",\r\n\"CreatedBy\": \"Suraj yadav\",\r\n\"ModifiedBy\": \"Suraj yadav\",\r\n\"UserId\": 3038,\r\n\"UserName\": \"Suraj yadav\",\r\n\"PinCode\": \"\",\r\n\"LeadTypeId\": 1,\r\n\"LeadTypeName\": \"Retailer / Sub Dealer\",\r\n\"LeadStageId\": 1,\r\n\"LeadStageName\": \"Enquiry\",\r\n\"ParentLeadId\": -1,\r\n\"ParentLeadName\": \"\",\r\n\"ReferralUserId\": 0,\r\n\"ReferralUserName\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/api/CRM/AddLead",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"api",
+						"CRM",
+						"AddLead"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
